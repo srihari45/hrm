@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<type-mapping>
+		<sql-type jdbc-type="CHAR" length='1' hibernate-type="yes_no" />
+		<sql-type jdbc-type="DATE" hibernate-type="java.sql.Timestamp" /> 
+<!--		<sql-type jdbc-type="VARCHAR" hibernate-type="java.lang.String"/>-->
+<!--		<sql-type jdbc-type="INTEGER" hibernate-type="java.lang.Long" />-->
+<!--		<sql-type jdbc-type="NUMERIC" hibernate-type="java.lang.Long" />-->
+<!--		<sql-type jdbc-type="NUMERIC" not-null="false" hibernate-type="java.lang.Long" />-->
+<!--		<sql-type jdbc-type="NUMERIC" not-null="true" hibernate-type="java.lang.Long" />-->
+
+
+
+		
+		
+<!--		<sql-type jdbc-type="SMALLINT" hibernate-type="java.lang.Long" />-->
+	</type-mapping>
+
+<!--	<schema-selection match-schema="pubs"/>-->
+	<!--table-filter :: Don't think we need the DUMMY table -->
+<!--	<table-filter exclude="true" match-name="*" match-schema="dbo" match-catalog="dbo" />-->
+<!--	<table-filter exclude="true" match-name="*sys*" />-->
+<!--	<table-filter exclude="true" match-name="*SYS*" />-->
+<!--	<table-filter exclude="true" match-name="*Sys*" />-->
+<!--	<table-filter exclude="true" match-name="*" />-->
+	
+	
+</hibernate-reverse-engineering>

@@ -1,0 +1,41 @@
+<project name="BUILD-BENCHMARK-DB" basedir="../../" default="">
+
+	<property name="build.dir" value="${basedir}/database/build-db" />
+
+	<property file="${build.dir}/build-postgres.properties" />
+
+	<path id="db.classpath">
+		<fileset dir="${basedir}/lib/db" includes="*.jar" />
+		<fileset dir="${basedir}/lib/dbunit" includes="*.jar" />
+	</path>
+
+	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask">
+		<classpath refid="db.classpath" />
+	</taskdef>
+
+	<target name="init">
+		<echo message="DB URL    : ${db.url}" />
+		<echo message="DB USER   : ${db.user}" />
+		<echo message="DB PWD    : ${db.pw}" />
+		<echo message="app.url    : ${app.url}" />
+	</target>
+	<tstamp>
+		<format property="tstamp" pattern="yyyy-MM-dd-HH-mm-ss" locale="en" />
+	</tstamp>
+
+	<target name="create-tables" depends="init">
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.pw}" onerror="continue" delimiter=";" classpathref="db.classpath" src="${build.dir}/postgres/create-tables.sql" />
+	</target>
+	<target name="drop-tables" depends="init">
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.pw}" onerror="continue" classpathref="db.classpath" src="${build.dir}/postgres/drop-tables.sql" />
+	</target>
+	<target name="create-indexes" depends="init">
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.pw}" onerror="continue" classpathref="db.classpath" src="${build.dir}/postgres/create-indexes.sql" />
+	</target>
+	<target name="basedata-inserts" depends="init">
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.pw}" onerror="continue" classpathref="db.classpath" src="${build.dir}/postgres/basedata-inserts.sql" delimiter="/" />
+	</target>
+	
+	<target name="deploy-db" depends="init,drop-tables,create-tables,create-indexes,basedata-inserts" />
+
+</project>

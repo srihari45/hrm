@@ -1,0 +1,3 @@
+
+DROP TABLE if exists REG_USER_LOGIN_H;
+DROP TABLE if exists REGISTRATION;

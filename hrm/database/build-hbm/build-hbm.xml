@@ -1,0 +1,69 @@
+<project name="BUILD-HBM" basedir="../../" default="deploy">
+
+	<property name="build.dir" value="${basedir}/build/build-hbm" />
+	<property name="lib.dir" value="${basedir}/lib" />
+	<property name="dest.dir" value="${build.dir}/generated" />
+	<property name="config.dir" value="${build.dir}/config" />
+	<property name="config.file.1" value="${config.dir}/hibernate-ora-cfg-1.xml" />
+	<property name="reveng.file.1" value="${config.dir}/hibernate-ora-reveng.xml" />
+	<property name="package.name" value="gov.bm.model" />
+	<property name="package.path" value="gov/bm/model" />
+	<property name="reveng.class" value="com.imagework.tools.hib.reveng.CustomStrategy" />
+	<property name="target.source.dir" value="${basedir}/app/GeneratedSource" />
+	<property file="${build.dir}/build-hbm.properties" />
+	
+	<path id="toolslib">
+		<fileset dir="${lib.dir}/hibernate" includes="*.jar" />
+		<fileset dir="${lib.dir}/hibernate-tools" includes="*.jar" />
+		<fileset dir="${lib.dir}/db" includes="*.jar" />
+		<fileset dir="${lib.dir}/dbunit" includes="*.jar" />
+		<fileset dir="${lib.dir}/imagework" includes="*.jar" />
+		 
+	</path>
+	
+	<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="toolslib" />
+
+	<target name="init">
+		<mkdir dir="${dest.dir}" />
+	</target>
+	<target name="clean">
+		<delete dir="${dest.dir}/" />
+	</target>
+	
+	
+	<target name="create-hbm" depends="clean,init">
+		
+		<hibernatetool destdir="${dest.dir}" >
+			<jdbcconfiguration 
+				configurationfile="${config.file.1}" 
+				revengfile="${reveng.file.1}" 
+				packagename="${package.name}" 
+				reversestrategy="${reveng.class}" />
+			<hbm2hbmxml />
+			<hbm2java  jdk5="true"/>
+
+			<hbm2cfgxml destdir="${build.dir}" />
+
+		</hibernatetool>
+	</target>
+	
+	
+
+	  <target name="promote" description="Promote the generated model and mapping files to main source directory">
+		<delete>
+		    <fileset dir="${target.source.dir}">
+			  <exclude name="**/*Dao*.java"/>
+		      <include name="**/*.xml"/>
+			  <include name="**/*.java"/>
+		    </fileset>
+		 </delete>
+	    <copy todir="${target.source.dir}" preservelastmodified="true" overwrite="true">
+	      <fileset dir="${dest.dir}"
+	               includes="${package.path}/**" />
+	    </copy>
+	  </target>
+
+	<target name="hbm" depends="create-hbm"/>		
+	<target name="deploy" depends="hbm,promote"/>
+
+</project>
