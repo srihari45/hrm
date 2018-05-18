@@ -30,6 +30,7 @@
 		<div class="banner">
 			<div class="center-align">
 				<h1 class="purple-text">House Revenue Management</h1>
+				<p>Use this <a href="https://www.mkyong.com/ant/ant-how-to-create-a-jar-file-with-external-libraries/" class="red-text">URL</a> to update ANT file..</p>
 				<a href="${pageContext.request.contextPath}/pub/login.html" class="purple-text">Login</a>
 			</div>
 		</div>
@@ -38,10 +39,10 @@
 </body>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/materialize.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(document).ready(function(){
   $(".button-collapse").sideNav();
 });
-</script>
+</script> -->
 
 </html>

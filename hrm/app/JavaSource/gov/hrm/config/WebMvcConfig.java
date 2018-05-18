@@ -44,7 +44,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Bean
 	public TilesConfigurer tilesConfigurer() {
 		TilesConfigurer tilesConfigurer = new TilesConfigurer();
-		tilesConfigurer.setDefinitions("/WEB-INF/views/**/tiles-defs.xml", "/WEB-INF/views/**/tiles-defs-admin.xml");
+		tilesConfigurer.setDefinitions("/WEB-INF/views/**/tiles-defs.xml");
 		tilesConfigurer.setCheckRefresh(true);
 		return tilesConfigurer;
 	}

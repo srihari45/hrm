@@ -1,4 +1,4 @@
-<project name="BUILD-BENCHMARK-DB" basedir="../../" default="">
+<project name="BUILD-HRM-DB" basedir="../../" default="">
 
 	<property name="build.dir" value="${basedir}/database/build-db" />
 

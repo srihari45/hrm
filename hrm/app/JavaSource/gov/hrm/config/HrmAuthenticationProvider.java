@@ -1,15 +1,12 @@
 package gov.hrm.config;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -28,8 +25,9 @@ public class HrmAuthenticationProvider implements AuthenticationProvider {
 		String password = authentication.getCredentials().toString();
 
 		log.debug("Username : " + username);
+		log.debug("Password : " + password);
 
-		List<GrantedAuthority> authorities = new ArrayList<>(0);
+		throw new UsernameNotFoundException("Invalid username!");
 
 		/*Registration registration = registrationDao.getRegistrationByEmail(username, false);
 		if (registration == null) {
@@ -54,9 +52,9 @@ public class HrmAuthenticationProvider implements AuthenticationProvider {
 		}
 		for (String role : rolesList) {
 			authorities.add(new SimpleGrantedAuthority(role));
-		}*/
+		}
 
-		return new UsernamePasswordAuthenticationToken(username, password, authorities);
+		return new UsernamePasswordAuthenticationToken(username, password, authorities);*/
 	}
 
 	@Override

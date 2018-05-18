@@ -1,35 +1,23 @@
-
+<style>
+.invalid-color{
+	color:red;
+}
+</style>
 <body>
   <div class="row">
     <div class="banner">
       <div class="center-align">
         <div class="z-depth-1 grey lighten-4 row" style="padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-          <form method="post">
+          <form class="page-form narrow-form public-form signin-form" name="signIn" id="signIn" method="POST" autocomplete="off">
             <div class='row'>
               <div class='col s12'>
                       <h5 class="indigo-text">Login into your account</h5>
               </div>
-     		  <%if(request.getParameter("user") != null){%>
-			     <div class="validation" aria-live="polite" aria-hidden="false">
-       			     <b>Invalid username!</b>
-       			 </div>
-     				<%} else if(request.getParameter("bad") != null){%>
-			     <div class="validation" aria-live="polite" aria-hidden="false">
-       			     <b>Invalid Credentials!</b>
-       			 </div>
-     				<%}else if(request.getParameter("inactive") != null){%>
-			     <div class="validation" aria-live="polite" aria-hidden="false">
-       			     <b>User is inactive!</b>
-       			 </div>
-     				<%} else if(request.getParameter("error") != null){%>
-     					 <div class="validation" aria-live="polite" aria-hidden="false">
+     		  <%if(request.getParameter("error") != null){%>
+			     <div class="invalid-color">
        			     <b>Invalid Login!</b>
        			 </div>
-     				<%} else if(request.getParameter("custom") != null){%>
- 					 <div class="validation" aria-live="polite" aria-hidden="false">
-   			    	 <b>Error while Login. Try again.</b>
-   				 </div>
-			 <%} %>
+     				<%}%>
             </div>
 
             <div class='row'>
@@ -62,3 +50,17 @@
     </div>
 </body>
 </html>
+
+<script type="text/javascript">
+  $('#signIn').submit(function (event) {
+       $(this).attr('action', '${pageContext.request.contextPath}/pub/login.html');
+  });
+  document.onkeypress = enterKey;
+  
+  function enterKey(evt) {
+ 		var evt = (evt) ? evt : ((event) ? event : null);
+ 		if (evt.keyCode == 13 ) {
+ 			 $('#signIn').click();
+ 		}
+  }
+</script>

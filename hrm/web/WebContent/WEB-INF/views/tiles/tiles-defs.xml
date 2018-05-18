@@ -20,5 +20,9 @@
 	<definition name="exception" extends="main">
        <put-attribute name="body" value="/WEB-INF/views/pages/jsp/error/exception.jsp" />
     </definition>
+    
+    <definition name="dashBoardPage" extends="main">
+   		<put-attribute name="body" value="/WEB-INF/views/pages/jsp/user/dashBoard.jsp"></put-attribute>
+   </definition>
    	
 </tiles-definitions>

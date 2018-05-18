@@ -9,4 +9,5 @@ public class UIFormConstants {
 
 	public static final String TILES_INDEX = "index";
 	public static final String TILES_LOGIN_PAGE = "loginPage";
+	public static final String TILES_DASHBOARD_PAGE = "dashBoardPage";
 }

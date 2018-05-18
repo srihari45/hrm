@@ -68,8 +68,8 @@
 	</nav>
 	
 	<ul id="dropdown-profile" class="dropdown-content profile">
-		<li><a class="waves-effect waves-blue a-header" href="${pageContext.request.contextPath}/auth/editMyAccount.html">My Account</a></li>
-		<li><a class="waves-effect waves-blue a-header" href="${pageContext.request.contextPath}/auth/logoutAction.html">Logout</a></li>
+		<li><a class="waves-effect waves-blue a-header" href="#">My Account</a></li>
+		<li><a class="waves-effect waves-blue a-header" href="#">Logout</a></li>
 	</ul>
 <%} %>
 <script type="text/javascript">
