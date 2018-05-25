@@ -98,6 +98,7 @@ public class ExceptionActionController extends SimpleMappingExceptionResolver {
 		}
 		sb.append("<br/>").append("<br/>");
 		
+		log.debug(request.getRequestURL().toString());
 		log.error(ex);
 
 

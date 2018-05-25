@@ -3,15 +3,15 @@
 	color:red;
 }
 </style>
-<body>
+<body data-ng-controller="loginController">
   <div class="row">
     <div class="banner">
       <div class="center-align">
-        <div class="z-depth-1 grey lighten-4 row" style="padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-          <form class="page-form narrow-form public-form signin-form" name="signIn" id="signIn" method="POST" autocomplete="off">
+        <div class="z-depth-1 card-color row" style="padding: 32px 48px 0px 48px; border: 1px solid #b9d8d5;">
+          <form class="page-form narrow-form public-form signin-form" data-ng-submit="formSubmit()" data-ng-controller="loginController" method="POST" autocomplete="off">
             <div class='row'>
               <div class='col s12'>
-                      <h5 class="indigo-text">Login into your account</h5>
+                      <h4 class="indigo-text">Login to continue to HRM</h4>
               </div>
      		  <%if(request.getParameter("error") != null){%>
 			     <div class="invalid-color">
@@ -22,7 +22,7 @@
 
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='active validate' type='email' name='username' id='username' />
+                <input class='active validate' type='email' name='username' id='username' data-ng-model="username" />
                 <label for='email'>Enter your email</label>
               </div>
             </div>
@@ -52,9 +52,10 @@
 </html>
 
 <script type="text/javascript">
-  $('#signIn').submit(function (event) {
+
+ /*  $('#signIn').submit(function (event) {
        $(this).attr('action', '${pageContext.request.contextPath}/pub/login.html');
-  });
+  }); */
   document.onkeypress = enterKey;
   
   function enterKey(evt) {

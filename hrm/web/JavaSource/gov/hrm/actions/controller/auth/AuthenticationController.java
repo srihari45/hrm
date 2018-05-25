@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import gov.hrm.actions.base.BaseActionController;
@@ -26,7 +25,7 @@ public class AuthenticationController extends BaseActionController {
 		return "redirect:/pub/login.html";
 	}
 
-	@GetMapping(value = "/pub/login.html")
+	@RequestMapping(value = "/pub/login.html")
 	public String showingLoginPage(HttpServletRequest request) {
 		SecurityContextHolder.getContext().setAuthentication(null);
 		request.getSession().invalidate();
