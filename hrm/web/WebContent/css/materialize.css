@@ -644,7 +644,7 @@
 }
 
 .blue {
-  background-color: #2196F3 !important;
+  background-color: #25565294 !important;
 }
 
 .blue-text {
@@ -5435,7 +5435,7 @@ button.btn-floating {
 }
 
 .dropdown-content {
-  background-color: #fff;
+  background-color: #789c9661;
   margin: 0;
   display: none;
   min-width: 100px;
@@ -5473,7 +5473,7 @@ button.btn-floating {
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
-  color: #26a69a;
+  color: ##111514;
   display: block;
   line-height: 22px;
   padding: 14px 16px;
@@ -7356,7 +7356,7 @@ input[type=range]:focus::-ms-fill-upper {
   height: calc(100% + 60px);
   height: -moz-calc(100%);
   padding-bottom: 60px;
-  background-color: #fff;
+  background-color: #3b716ac2;
   z-index: 999;
   overflow-y: auto;
   will-change: transform;

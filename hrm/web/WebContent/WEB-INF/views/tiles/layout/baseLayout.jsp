@@ -1,7 +1,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <!DOCTYPE html>
-<html data-ng-app="angularApp">
+<html>
 
 <!-- Header Section starts -->
 <head>
