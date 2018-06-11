@@ -34,7 +34,7 @@ public class HrmAuthenticationProvider implements AuthenticationProvider {
 
 		if (!StringUtils.isNull(username) && !StringUtils.isNull(password)) {
 			List<GrantedAuthority> authorities = new ArrayList<>();
-			authorities.add(new SimpleGrantedAuthority(HRMConstants.ROLE_ADMIN));
+			authorities.add(new SimpleGrantedAuthority(HRMConstants.ROLE_USER));
 			return new UsernamePasswordAuthenticationToken(username, password, authorities);
 		}
 
