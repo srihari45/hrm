@@ -11,11 +11,6 @@ public class HrmCsrfRequestMatcher implements RequestMatcher {
 		if (request.getMethod().equalsIgnoreCase("GET")) {
 			return false;
 		}
-		if (request.getServletPath().contains("/pub/")
-				|| request.getServletPath().endsWith("/sa/legacy-organisation.html")) {
-
-			return false;
-		}
 		return true;
 	}
 
