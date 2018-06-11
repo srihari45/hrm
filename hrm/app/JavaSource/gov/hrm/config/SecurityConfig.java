@@ -60,8 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.and()
 		.sessionManagement()
 			.sessionAuthenticationStrategy(concurrentSession());
-		// This session has been expired (possibly due to multiple concurrent logins being attempted as the same user).
-		http.csrf().disable();
+		http.csrf().requireCsrfProtectionMatcher(new HrmCsrfRequestMatcher());
 		http.exceptionHandling().accessDeniedPage("/pub/403.html");
 
 	}

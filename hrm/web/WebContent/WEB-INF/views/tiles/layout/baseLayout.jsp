@@ -11,6 +11,9 @@
   <meta name="author" content="Benchmark"/>
   <meta name="description" content="<tiles:insertAttribute name="description" ignore="true"/>"/>
   
+  <meta name="_csrf" content="${_csrf.token}"/>
+  <meta name="_csrf_header" content="${_csrf.headerName}"/>
+  
   <!-- Insert dynamically page titles -->
   <title><tiles:insertAttribute name="title" ignore="true" /></title>
   <tiles:insertAttribute name="cssInclude" ignore="true" />
