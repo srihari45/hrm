@@ -22,7 +22,7 @@
 
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='active validate' type='email' name='username' />
+                <input class='active validate' type='email' name='username' autofocus="autofocus"/>
                 <label for='email'>Enter your email</label>
               </div>
             </div>

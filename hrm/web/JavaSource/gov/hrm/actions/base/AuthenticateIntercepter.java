@@ -20,9 +20,9 @@ public class AuthenticateIntercepter extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 		
-		log.debug("Request URL : {}", request.getRequestURL());
-		log.debug("Http Method : {}", request.getMethod());
-		log.debug("Remote User : {}", request.getRemoteUser());
+		log.debug("Request URL : ", request.getRequestURL());
+		log.debug("Http Method : ", request.getMethod());
+		log.debug("Remote User : ", request.getRemoteUser());
 		return true;
 	}
 }

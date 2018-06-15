@@ -34,7 +34,8 @@
 			<div class="center-align">
 				<h1 class="purple-text">House Revenue Management</h1>
 				<p>Use this <a href="https://www.mkyong.com/ant/ant-how-to-create-a-jar-file-with-external-libraries/" class="red-text">URL</a> to update ANT file..</p>
-				<a href="${pageContext.request.contextPath}/pub/login.html" class="purple-text">Login</a>
+				<a href="${pageContext.request.contextPath}/pub/login.html" class="purple-text">Login</a> or 
+				<a href="${pageContext.request.contextPath}/pub/signUp.html" class="purple-text">SignUp</a>
 			</div>
 		</div>
 	</div>

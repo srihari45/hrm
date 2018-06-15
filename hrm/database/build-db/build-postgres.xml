@@ -6,7 +6,7 @@
 
 	<path id="db.classpath">
 		<fileset dir="${basedir}/lib/db" includes="*.jar" />
-		<fileset dir="${basedir}/lib/dbunit" includes="*.jar" />
+		<fileset dir="${basedir}/lib/dbunit" includes="*.jar" />   //dbunit-2.4.7, slf4j-api-1.5.8, slf4j-jdk14-1.5.8
 	</path>
 
 	<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask">

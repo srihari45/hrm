@@ -24,5 +24,13 @@
     <definition name="dashBoardPage" extends="main">
    		<put-attribute name="body" value="/WEB-INF/views/pages/jsp/user/dashBoard.jsp"></put-attribute>
    </definition>
+   
+   <definition name="signUpPage" extends="main">
+   		<put-attribute name="body" value="/WEB-INF/views/pages/jsp/signUp.jsp"></put-attribute>
+   </definition>
+   
+   <definition name="signUpConfirmationPage" extends="main">
+   		<put-attribute name="body" value="/WEB-INF/views/pages/jsp/signUpConfirmation.jsp"></put-attribute>
+   </definition>
    	
 </tiles-definitions>

@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import gov.hrm.actions.base.BaseActionController;
@@ -20,23 +19,18 @@ public class AuthenticationController extends BaseActionController {
 
 		log.info("Remote User : " + request.getRemoteUser());
 		if (!StringUtils.isNull(request.getRemoteUser())) {
-			return "redirect:/admin/dashboard.html";
+			return "redirect:/user/dashboard.html";
 		}
 
 		return "redirect:/pub/login.html";
 	}
 
-	@RequestMapping(value = "/pub/login.html")
+	@RequestMapping(value = { "/pub/login.html", "/pub/logout.html" })
 	public String showingLoginPage(HttpServletRequest request) {
 		log.debug("Showing login page");
+		SecurityContextHolder.getContext().setAuthentication(null);
+		request.getSession().invalidate();
 		return UIFormConstants.TILES_LOGIN_PAGE;
 	}
 
-	@GetMapping(value = "/pub/logout.html")
-	public String logoutSuccess(HttpServletRequest request, HttpServletResponse response) {
-		SecurityContextHolder.getContext().setAuthentication(null);
-		request.getSession().invalidate();
-		log.debug("logged out the user");
-		return UIFormConstants.TILES_LOGIN_PAGE;
-	}
 }
