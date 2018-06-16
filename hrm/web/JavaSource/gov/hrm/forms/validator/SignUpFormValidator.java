@@ -32,7 +32,7 @@ public class SignUpFormValidator implements Validator {
 		} else {
 			if (!StringUtils.isNumber(signUpForm.getPhone().replaceAll("\\p{P}", ""))) {
 				errors.rejectValue("phone", HRMConstants.ERROR_CONTACT_NO_NUMERIC);
-			} else if (signUpForm.getPhone().length() != 13) {
+			} else if (signUpForm.getPhone().length() != 10) {
 				errors.rejectValue("phone", HRMConstants.ERROR_PHONE_NO_LENGTH);
 			}
 		}

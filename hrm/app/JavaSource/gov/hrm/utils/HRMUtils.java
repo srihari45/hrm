@@ -1,5 +1,8 @@
 package gov.hrm.utils;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 public class HRMUtils {
 
 	private static String applicationClassPath = "";
@@ -54,5 +57,23 @@ public class HRMUtils {
 	 */
 	public static void setApplicationTempPath(String applicationTempPath) {
 		HRMUtils.applicationTempPath = applicationTempPath;
+	}
+	
+	/**
+	 * To get {@link URLEncoder} email verification URL to the given user name
+	 * as string.
+	 * 
+	 * @param userName
+	 *            Based on user name will get email verification URL.
+	 * @return Verification String value as verification URL.
+	 * @throws UnsupportedEncodingException
+	 *             If the named encoding is not supported.
+	 * 
+	 * @see java.io.UnsupportedEncodingException
+	 */
+	public static String getVerifyEmailURL(String userName) throws UnsupportedEncodingException {
+		String query = "hrmUsername=" + userName;
+		String url = "/pub/registeredUserPageAction.html?_qx=" + URLEncoder.encode(CryptoUtil.encodePlainText(query), "UTF8");
+		return url;
 	}
 }

@@ -53,7 +53,7 @@
 
             <div class='row'>
               <div class='input-field col s12'>
-                <form:input path='refEmail' class='active validate'/>
+                <form:input path='refEmail' class='active'/>
                 <form:label path='refEmail'>Reference Email(Optional)</form:label>
               </div>
             </div>
@@ -122,12 +122,12 @@ $("#phone").on("blur", function(){
 		   return false;
 	 }
 	 
-	 if(!validateEmailByString($("#refEmail").val())){
+	 if($("#refEmail").val() != "" && !validateEmailByString($("#refEmail").val())){
 		   showErrorCssWithToast("refEmail", "Please enter valid email id.");
 		   return false;
 	 }
 	 
-	 document.signUpForm.action="${pageContext.request.contextPath}/pub/signUp.html";
+	 document.signUpForm.action="${pageContext.request.contextPath}/pub/submitSignUp.html";
 	 document.signUpForm.submit();
  }
 
