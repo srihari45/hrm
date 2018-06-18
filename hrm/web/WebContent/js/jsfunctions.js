@@ -1167,3 +1167,10 @@ function toCamelCase(str) {
         return match.toUpperCase();
     });
 }
+
+function currentMonth(){
+	var date = new Date();
+	var monthsArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	var curMonth = date.getMonth();
+	return monthsArr[curMonth];
+}

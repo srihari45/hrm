@@ -58,11 +58,48 @@
 				<li class="blue">
 					<ul class="collapsible menu-btn">
 						<li>
-							<a class="button-collapse-close menu"> <i class="material-icons white-text">menu</i></a> 
-						    <a class="home-link" href="javascript:void(0);">Home</a>
+							<a class="button-collapse-close menu"> <i class="material-icons white-text">dashboard</i></a> 
+						    <a class="home-link" href="${pageContext.request.contextPath}/user/dashboard.html">Home</a>
 						</li>
 					</ul>
 				</li>
+				
+				<li class="blue">
+					<ul class="collapsible menu-btn">
+						<li>
+							<a class="button-collapse-close menu"> <i class="material-icons white-text">people</i></a> 
+						    <a class="home-link" href="${pageContext.request.contextPath}/user/addmembers.html">Add Members</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li class="blue">
+					<ul class="collapsible menu-btn">
+						<li>
+							<a class="button-collapse-close menu"> <i class="material-icons white-text">schedule</i></a> 
+						    <a class="home-link" href="${pageContext.request.contextPath}/user/workSchedules.html">Work Schedule</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li class="blue">
+					<ul class="collapsible menu-btn">
+						<li>
+							<a class="button-collapse-close menu"> <i class="material-icons white-text">file_download</i></a> 
+						    <a class="home-link" href="javascript:void(0);">Budget Export</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li class="blue">
+					<ul class="collapsible menu-btn">
+						<li>
+							<a class="button-collapse-close menu"> <i class="material-icons white-text">history</i></a> 
+						    <a class="home-link" href="javascript:void(0);">Budget History</a>
+						</li>
+					</ul>
+				</li>
+				
 			</ul>
 		</div>
 	</nav>

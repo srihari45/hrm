@@ -25,6 +25,14 @@
    		<put-attribute name="body" value="/WEB-INF/views/pages/jsp/user/dashBoard.jsp"></put-attribute>
    </definition>
    
+   <definition name="addMembersPage" extends="main">
+   		<put-attribute name="body" value="/WEB-INF/views/pages/jsp/user/addMembers.jsp"></put-attribute>
+   </definition>
+   
+   <definition name="workSchedulePage" extends="main">
+   		<put-attribute name="body" value="/WEB-INF/views/pages/jsp/user/workSchedule.jsp"></put-attribute>
+   </definition>
+   
    <definition name="signUpPage" extends="main">
    		<put-attribute name="body" value="/WEB-INF/views/pages/jsp/signUp.jsp"></put-attribute>
    </definition>

@@ -32,7 +32,7 @@ import gov.hrm.utils.UIFormConstants;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = { "gov.hrm.config", "gov.hrm.config.annotation", "gov.hrm.utils", "gov.hrm.actions.base", "gov.hrm.actions.controller.pub",
-		"gov.hrm.actions.controller.auth", "gov.hrm.svc", "gov.hrm.svc.impl", "gov.hrm.dao", "gov.hrm.dao.impl", "gov.hrm.forms"})
+		"gov.hrm.actions.controller.auth", "gov.hrm.actions.controller.user", "gov.hrm.svc", "gov.hrm.svc.impl", "gov.hrm.dao", "gov.hrm.dao.impl", "gov.hrm.forms"})
 public class WebMvcConfig implements WebMvcConfigurer {
 
 	@Autowired

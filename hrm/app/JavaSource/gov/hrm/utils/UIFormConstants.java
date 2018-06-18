@@ -17,8 +17,13 @@ public class UIFormConstants {
 	
 	
 	public static final String TILES_DASHBOARD_PAGE = "dashBoardPage";
+	public static final String TILES_ADD_MEMBERS_PAGE = "addMembersPage";
+	public static final String TILES_WORK_SCHEDULE_PAGE = "workSchedulePage";
+	
 	public static final String TILES_ERROR_PAGE = "errorPage";
 	
 	//Forms
 	public static final String FORM_SIGNUP = "signUpForm";
+	public static final String FORM_ADD_MEMBER = "addMemberForm";
+	public static final String FORM_WORK_SCHEDULE = "workScheduleForm";
 }

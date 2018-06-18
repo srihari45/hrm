@@ -35,12 +35,6 @@ public class RegistrationActionController extends BaseActionController {
 	@Autowired
 	private SignUpFormValidator signUpFormValidator;
 
-	@RequestMapping(value = "/user/dashboard.html")
-	public String showingDashboard(HttpServletRequest request) {
-		log.debug("User : " + request.getRemoteUser());
-		return UIFormConstants.TILES_DASHBOARD_PAGE;
-	}
-
 	@GetMapping(value = "/pub/signUp.html")
 	public String signUpPage(HttpServletRequest request, ModelMap model) {
 		log.debug("Showing SignUp page..");

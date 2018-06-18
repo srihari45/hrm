@@ -6,9 +6,9 @@
     <div class="banner">
       <div class="center-align">
         <div class="z-depth-1 card-color row" style="padding: 32px 48px 0px 48px; border: 1px solid #b9d8d5;">
-          <form:form modelAttribute="signUpForm" name="signUpForm" class="page-form" id="signUpForm" method="POST" autocomplete="off">
-          
-          	<div id="errorDiv" style="display:none;">
+          <form:form modelAttribute="addMemberForm" name="addMemberForm" id="addMemberForm" class="page-form" method="POST" autocomplete="off">
+		    
+		    <div id="errorDiv" style="display:none;">
 			   <form:errors path="firstName" />
 	           <form:errors path="lastName" />
 	           <form:errors path="email" />
@@ -19,48 +19,49 @@
 		     
             <div class='row'>
               <div class='col s12'>
-                      <h4 class="indigo-text">Please provide your details</h4>
+                      <h4 class="indigo-text">Please enter member details</h4>
               </div>
             </div>
             
             <div class='row'>
               <div class='input-field col s12'>
-                <form:input path='firstName' class='active validate' autofocus="autofocus"/>
+                <form:input path='firstName' id='firstName' type="text" class='active validate' autofocus="autofocus"/>
                 <form:label path='firstName'>First Name</form:label>
               </div>
             </div>
             
             <div class='row'>
               <div class='input-field col s12'>
-                <form:input path='lastName' class='active validate' />
+                <form:input path='lastName' id='lastName' type="text" class='active validate' />
                 <form:label path='lastName'>Last Name</form:label>
               </div>
             </div>
             
             <div class='row'>
               <div class='input-field col s12'>
-                <form:input path='email' class='active validate' />
+                <form:input path='email' id='email' type="text" class='active validate' />
                 <form:label path='email'>Email</form:label>
               </div>
             </div>
             
             <div class='row'>
               <div class='input-field col s12'>
-                <form:input path='phone' class='active validate' maxlength="10" />
+                <form:input path='phone' id='phone' type="text" class='active validate' maxlength="10" />
                 <form:label path='phone'>Mobile Number</form:label>
               </div>
             </div>
 
             <div class='row'>
               <div class='input-field col s12'>
-                <form:input path='refEmail' class='active'/>
+                <form:input path='refEmail' id='refEmail' type="text" class='active validate'/>
                 <form:label path='refEmail'>Reference Email(Optional)</form:label>
               </div>
             </div>
 
-              <div class='row'>
-                <a class="btn btn-large" id="submitButton" onclick="submitForm()">SignUp</a>
-              </div>
+            <div class='col s3'></div>
+            <div class='row'>
+                <a class='col s6 btn btn-large waves-effect indigo' id="submitButton" onclick="submitForm()">ADD</a>
+            </div>
           </form:form>
         </div>
       </div>
@@ -68,7 +69,7 @@
     </div>
 </body>
 
-<script type="text/javascript">
+<script>
 
 $(document).ready(function() {
     var toastContent = "";
@@ -100,10 +101,10 @@ $("#phone").on("blur", function(){
 	}
 });
 
- function submitForm(){
+function submitForm(){
 	 
 	 var errorFlag = false;
-	   $("#signUpForm input.validate").each(function(){
+	   $("#addMemberForm input.validate").each(function(){
 		   if($(this).val()=="" || $(this).val() == null){
 			   errorFlag = true;
 			   displayErrorCss(this.id);
@@ -125,16 +126,16 @@ $("#phone").on("blur", function(){
 		   return false;
 	 }
 	 
-	 document.signUpForm.action="${pageContext.request.contextPath}/pub/submitSignUp.html";
-	 document.signUpForm.submit();
+	 document.addMemberForm.action="${pageContext.request.contextPath}/user/submitAddMember.html";
+	 document.addMemberForm.submit();
+}
+
+document.onkeypress = enterKey;
+
+ function enterKey(evt) {
+		var evt = (evt) ? evt : ((event) ? event : null);
+		if (evt.keyCode == 13 ) {
+			 $('#addMemberForm').click();
+		}
  }
-
- document.onkeypress = enterKey;
-
-  function enterKey(evt) {
- 		var evt = (evt) ? evt : ((event) ? event : null);
- 		if (evt.keyCode == 13 ) {
- 			 $('#signUpForm').click();
- 		}
-  }
 </script>

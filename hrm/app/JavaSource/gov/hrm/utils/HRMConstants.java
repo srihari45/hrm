@@ -26,4 +26,7 @@ public class HRMConstants {
 	public static final String ERROR_EMAIL_LENGHT = "emailLenghtError";
 	public static final String ERROR_REF_EMAIL_VALIDATION = "refEmailValidationError";
 	public static final String ERROR_REF_EMAIL_LENGHT = "refEmailLenghtError";
+	public static final String ERROR_SCHEDULE_CANDIDATE = "scheduleCandidateError";
+	public static final String ERROR_SCHEDULE_WORK = "scheduleWorkError";
+	public static final String ERROR_SCHEDULE_DATE = "scheduleDateError";
 }
