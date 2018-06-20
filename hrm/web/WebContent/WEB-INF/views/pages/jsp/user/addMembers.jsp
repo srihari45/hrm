@@ -1,7 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<body>
   <div class="row">
     <div class="banner">
       <div class="center-align">
@@ -67,7 +66,6 @@
       </div>
       </div>
     </div>
-</body>
 
 <script>
 

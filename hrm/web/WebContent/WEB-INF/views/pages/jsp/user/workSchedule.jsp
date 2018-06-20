@@ -1,7 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<body>
   <div class="row">
     <div class="banner">
       <div class="center-align">
@@ -17,7 +16,7 @@
 		     
             <div class='row'>
               <div class='col s12'>
-                      <h4 class="indigo-text">Please enter member details</h4>
+                      <h4 class="indigo-text">Please enter schedule details</h4>
               </div>
             </div>
             
@@ -43,7 +42,7 @@
             <div class='row'>
               <div class='input-field col s12'>
                 <form:input path="scheduleDate" id="scheduleDate" class='active validate datepicker'/>
-                <form:label path='scheduleDate'>Date of Expense</form:label>
+                <form:label path='scheduleDate'>Date of Work</form:label>
               </div>
             </div>
 
@@ -56,7 +55,6 @@
       </div>
       </div>
     </div>
-</body>
 
 <script>
 
@@ -68,14 +66,26 @@ $(document).ready(function() {
 		toastContent += "<br/>";
 	});
 	callErrorToast(toastContent);
-	 $('.datepicker').pickadate({
-		    selectMonths: true, // Creates a dropdown to control month
-		    selectYears: 10, // Creates a dropdown of 15 years to control year,
-		    today: 'Today',
-		    clear: 'Clear',
-		    close: 'Ok',
-		    format: 'mm/dd/yyyy',
-		    closeOnSelect: false // Close upon selecting a date,
+	$('.datepicker').pickadate({
+	    selectMonths: true, // Creates a dropdown to control month
+	    selectYears: 10, // Creates a dropdown of 15 years to control year,
+	    today: 'Today',
+	    clear: 'Clear',
+	    close: 'Ok',
+	    format: 'mm/dd/yyyy',
+	    min: new Date(),
+	    closeOnSelect: false // Close upon selecting a date,
+  });
+  $('.timepicker').pickatime({
+	   default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+	   fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+	   twelvehour: false, // Use AM/PM or 24-hour format
+	   donetext: 'OK', // text for done-button
+	   cleartext: 'Clear', // text for clear-button
+	   canceltext: 'Cancel', // Text for cancel-button
+	   autoclose: false, // automatic close timepicker
+	   ampmclickable: true, // make AM PM clickable
+	   aftershow: function(){} //Function for after opening timepicker
   });
 });
 
